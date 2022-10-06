@@ -17,7 +17,7 @@ class NotePage extends StatefulWidget {
 
 class _NotePageState extends State<NotePage> {
   late List<Note> notes;
-  
+
   bool isLoading = false;
 
   @override

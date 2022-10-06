@@ -26,7 +26,7 @@ class NoteCard extends StatelessWidget {
     final time = DateFormat.yMMMd().format(note.createdTime);
     final now = DateFormat.jm().format(note.createdTime);
     final showd = note.description.length > 60
-        ? note.description.substring(0, 50)
+        ? note.description.substring(0, 100)
         : note.description;
     final showt =
         note.title.length > 15 ? note.title.substring(0, 15) : note.title;
@@ -37,9 +37,7 @@ class NoteCard extends StatelessWidget {
       color: color,
       child: Padding(
         padding: const EdgeInsets.all(7.0),
-        child: Container(
-          constraints: BoxConstraints(maxHeight: 30),
-          height: 50.0,
+        child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -63,7 +61,7 @@ class NoteCard extends StatelessWidget {
               ),
               SizedBox(height: 10),
               Text(
-                showd,
+                note.description,
               ),
             ],
           ),
